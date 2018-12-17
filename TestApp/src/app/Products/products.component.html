@@ -1,0 +1,13 @@
+<form [formGroup]="formdata" (ngSubmit)="onSubmit(formdata.value)">
+    <a (click)="addProduct()" style="cursor: default">Add Product</a>
+    <div *ngFor="let item of formdata.get('prod').controls; let i = index;" formArrayName="prod">  
+        <div [formGroupName]="i">    
+            <label>S.No.:</label><input type="text" formControlName="sno" name="sno"/>
+            <label>Name:</label><input type="text" formControlName="productName" name="productName"/>
+            <label>Quantity:</label><input type="text" formControlName="quantity" name="quantity"/>
+            <label>Rate:</label><input type="text" formControlName="rate" name="rate"/>
+            <label>Price:</label><input type="text" formControlName="totalPrice" name="totalPrice"/>     
+        </div> 
+    </div>
+<button id='submit'>Submit</button>
+</form> 
